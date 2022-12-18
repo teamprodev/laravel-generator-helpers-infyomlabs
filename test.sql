@@ -11,7 +11,7 @@
  Target Server Version : 80015
  File Encoding         : 65001
 
- Date: 18/12/2022 01:06:36
+ Date: 18/12/2022 10:48:14
 */
 
 SET NAMES utf8mb4;
@@ -33,13 +33,13 @@ CREATE TABLE `categories`  (
   UNIQUE INDEX `categories_slug_unique`(`slug` ASC) USING BTREE,
   INDEX `categories_parent_id_foreign`(`parent_id` ASC) USING BTREE,
   CONSTRAINT `categories_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `categories` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES (1, NULL, 1, 'Category 1', 'category-1', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `categories` VALUES (2, NULL, 1, 'Category 2', 'category-2', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
+INSERT INTO `categories` VALUES (1, NULL, 1, 'Category 1', 'category-1', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `categories` VALUES (2, NULL, 1, 'Category 2', 'category-2', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
 
 -- ----------------------------
 -- Table structure for customers
@@ -66,12 +66,11 @@ CREATE TABLE `customers`  (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of customers
 -- ----------------------------
-INSERT INTO `customers` VALUES (3, 'Mrs', 'Cruz', 'Reynolds', '1-776-102-6352', 'Lynn', 'EJ89 9DQ', '2022-12-11 17:29:26', '2011-12-31 23:34:03', NULL, 0, 2, 3, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (4, 'Dr', 'Sophia', 'Morris', '1-463-224-1405', 'Belleville', 'T1F 2X1', '2022-12-11 17:29:26', '2012-08-04 02:55:53', NULL, 0, 3, 4, NULL, '08:00:00', '15:30:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (5, 'Miss', 'Kamal', 'Roberson', '1-134-408-5227', 'Rehoboth Beach', 'V7I 6T5', '2022-12-11 17:29:26', '2012-12-23 00:17:03', NULL, 1, 1, 5, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (6, 'Dr', 'Dustin', 'Rosa', '1-875-919-3188', 'Jersey City', 'E4 8ZE', '2022-12-11 17:29:26', '2012-10-05 22:18:59', NULL, 0, 1, 6, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
@@ -80,7 +79,7 @@ INSERT INTO `customers` VALUES (8, 'Mrs', 'Bryar', 'Long', '1-918-114-8083', 'Sa
 INSERT INTO `customers` VALUES (9, 'Mrs', 'Kuame', 'Wynn', '1-101-692-4039', 'Truth or Consequences', '21290', '2022-12-11 17:29:26', '2011-06-21 16:27:07', NULL, 1, 2, 3, NULL, '06:00:00', '14:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (10, 'Ms', 'Indigo', 'Brennan', '1-756-756-8161', 'Moline', 'NO8 3UY', '2022-12-11 17:29:26', '2011-02-19 12:51:08', NULL, 1, 5, 4, NULL, '12:00:00', '00:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (11, 'Mrs', 'Avram', 'Allison', '1-751-507-2640', 'Rancho Palos Verdes', 'I7Q 8H4', '2022-12-11 17:29:26', '2012-12-30 17:02:10', NULL, 0, 1, 5, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
-INSERT INTO `customers` VALUES (12, 'title', 'Denis', 'Ungarov', '1-971-722-1203', 'Tashkent', 'Q5R 9HI', '2022-12-11 17:29:26', '2011-02-04 17:25:55', NULL, 1, 1, 6, NULL, '12:00:00', '00:00:00', NULL, NULL, '2022-12-17 14:59:02');
+INSERT INTO `customers` VALUES (12, 'title', 'Denis', 'Ungarov', '1-971-722-1203', 'Tashkent', 'Q5R 9HI', '2022-12-11 17:29:26', '2011-02-04 17:25:55', NULL, 1, 1, 6, NULL, '12:00:00', '00:00:00', NULL, NULL, '2022-12-17 19:59:02');
 INSERT INTO `customers` VALUES (13, 'Miss', 'Lael', 'Kim', '1-626-697-2194', 'Lake Charles', '34209', '2022-12-11 17:29:26', '2012-07-24 06:44:22', NULL, 1, 7, 1, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (14, 'Dr', 'Lyle', 'Lewis', '1-231-793-3520', 'Simi Valley', 'H9B 2H4', '2022-12-11 17:29:26', '2012-08-30 03:28:54', NULL, 0, 1, 2, NULL, '00:00:00', '12:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (15, 'Miss', 'Veronica', 'Marks', '1-750-981-6759', 'Glens Falls', 'E3C 5D1', '2022-12-11 17:29:26', '2012-08-14 12:09:24', NULL, 1, 2, 3, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
@@ -105,7 +104,8 @@ INSERT INTO `customers` VALUES (33, 'Ms', 'Rhonda', 'Harrell', '1-934-906-6474',
 INSERT INTO `customers` VALUES (34, 'Mrs', 'Jocelyn', 'England', '1-826-860-7773', 'Chico', '71102', '2022-12-11 17:29:26', '2012-05-31 18:01:43', NULL, 1, 1, 4, NULL, '09:00:00', '17:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (35, 'Dr', 'Vincent', 'Banks', '1-225-418-0941', 'Palo Alto', '03281', '2022-12-11 17:29:26', '2011-08-07 07:22:43', NULL, 0, 1, 5, NULL, '18:00:00', '02:00:00', NULL, NULL, NULL);
 INSERT INTO `customers` VALUES (36, 'Mrs', 'Stewart', 'Chan', '1-781-793-2340', 'Grand Forks', 'L1U 3ED', '2022-12-11 17:29:26', '2012-11-01 23:14:44', NULL, 1, 6, 6, NULL, '08:00:00', '16:00:00', NULL, NULL, NULL);
-INSERT INTO `customers` VALUES (37, 'fieowq', 'fewafe', 'feawfe', NULL, 'fafeaf', NULL, '2022-12-18 00:59:33', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2022-12-17 14:59:33', '2022-12-17 14:59:33');
+INSERT INTO `customers` VALUES (37, 'fieowq', 'fewafe', 'feawfe', NULL, 'fafeaf', NULL, '2022-12-18 00:59:33', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2022-12-17 19:59:33', '2022-12-17 19:59:33');
+INSERT INTO `customers` VALUES (38, 'feawfeawf', 'feafewf', 'fewafefew', '45646456', 'feafeaafa', NULL, '2022-12-18 01:59:12', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, '2022-12-17 20:59:12', '2022-12-17 20:59:12');
 
 -- ----------------------------
 -- Table structure for data_rows
@@ -128,7 +128,7 @@ CREATE TABLE `data_rows`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `data_rows_data_type_id_foreign`(`data_type_id` ASC) USING BTREE,
   CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of data_rows
@@ -212,17 +212,17 @@ CREATE TABLE `data_types`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `data_types_name_unique`(`name` ASC) USING BTREE,
   UNIQUE INDEX `data_types_slug_unique`(`slug` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of data_types
 -- ----------------------------
-INSERT INTO `data_types` VALUES (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2022-02-25 12:45:37', '2022-02-25 12:45:37');
-INSERT INTO `data_types` VALUES (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2022-02-25 12:45:37', '2022-02-25 12:45:37');
-INSERT INTO `data_types` VALUES (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2022-02-25 12:45:37', '2022-02-25 12:45:37');
-INSERT INTO `data_types` VALUES (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2022-02-25 12:45:45', '2022-02-25 12:45:45');
-INSERT INTO `data_types` VALUES (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `data_types` VALUES (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2022-02-25 12:45:47', '2022-02-25 12:45:47');
+INSERT INTO `data_types` VALUES (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2022-02-25 17:45:37', '2022-02-25 17:45:37');
+INSERT INTO `data_types` VALUES (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2022-02-25 17:45:37', '2022-02-25 17:45:37');
+INSERT INTO `data_types` VALUES (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2022-02-25 17:45:37', '2022-02-25 17:45:37');
+INSERT INTO `data_types` VALUES (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2022-02-25 17:45:45', '2022-02-25 17:45:45');
+INSERT INTO `data_types` VALUES (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `data_types` VALUES (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2022-02-25 17:45:47', '2022-02-25 17:45:47');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -238,7 +238,7 @@ CREATE TABLE `failed_jobs`  (
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `failed_jobs_uuid_unique`(`uuid` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of failed_jobs
@@ -265,24 +265,24 @@ CREATE TABLE `menu_items`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `menu_items_menu_id_foreign`(`menu_id` ASC) USING BTREE,
   CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menu_items
 -- ----------------------------
-INSERT INTO `menu_items` VALUES (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2022-02-25 12:45:38', '2022-02-25 12:45:38', 'voyager.dashboard', NULL);
-INSERT INTO `menu_items` VALUES (2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2022-02-25 12:45:38', '2022-02-25 12:45:38', 'voyager.media.index', NULL);
-INSERT INTO `menu_items` VALUES (3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2022-02-25 12:45:38', '2022-02-25 12:45:38', 'voyager.users.index', NULL);
-INSERT INTO `menu_items` VALUES (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2022-02-25 12:45:38', '2022-02-25 12:45:38', 'voyager.roles.index', NULL);
-INSERT INTO `menu_items` VALUES (5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2022-02-25 12:45:38', '2022-02-25 12:45:38', NULL, NULL);
-INSERT INTO `menu_items` VALUES (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 10, '2022-02-25 12:45:38', '2022-02-25 12:45:38', 'voyager.menus.index', NULL);
-INSERT INTO `menu_items` VALUES (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 11, '2022-02-25 12:45:39', '2022-02-25 12:45:39', 'voyager.database.index', NULL);
-INSERT INTO `menu_items` VALUES (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2022-02-25 12:45:39', '2022-02-25 12:45:39', 'voyager.compass.index', NULL);
-INSERT INTO `menu_items` VALUES (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2022-02-25 12:45:39', '2022-02-25 12:45:39', 'voyager.bread.index', NULL);
-INSERT INTO `menu_items` VALUES (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2022-02-25 12:45:39', '2022-02-25 12:45:39', 'voyager.settings.index', NULL);
-INSERT INTO `menu_items` VALUES (11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2022-02-25 12:45:46', '2022-02-25 12:45:46', 'voyager.categories.index', NULL);
-INSERT INTO `menu_items` VALUES (12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2022-02-25 12:45:47', '2022-02-25 12:45:47', 'voyager.posts.index', NULL);
-INSERT INTO `menu_items` VALUES (13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2022-02-25 12:45:48', '2022-02-25 12:45:48', 'voyager.pages.index', NULL);
+INSERT INTO `menu_items` VALUES (1, 1, 'Dashboard', '', '_self', 'voyager-boat', NULL, NULL, 1, '2022-02-25 17:45:38', '2022-02-25 17:45:38', 'voyager.dashboard', NULL);
+INSERT INTO `menu_items` VALUES (2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2022-02-25 17:45:38', '2022-02-25 17:45:38', 'voyager.media.index', NULL);
+INSERT INTO `menu_items` VALUES (3, 1, 'Users', '', '_self', 'voyager-person', NULL, NULL, 3, '2022-02-25 17:45:38', '2022-02-25 17:45:38', 'voyager.users.index', NULL);
+INSERT INTO `menu_items` VALUES (4, 1, 'Roles', '', '_self', 'voyager-lock', NULL, NULL, 2, '2022-02-25 17:45:38', '2022-02-25 17:45:38', 'voyager.roles.index', NULL);
+INSERT INTO `menu_items` VALUES (5, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2022-02-25 17:45:38', '2022-02-25 17:45:38', NULL, NULL);
+INSERT INTO `menu_items` VALUES (6, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 5, 10, '2022-02-25 17:45:38', '2022-02-25 17:45:38', 'voyager.menus.index', NULL);
+INSERT INTO `menu_items` VALUES (7, 1, 'Database', '', '_self', 'voyager-data', NULL, 5, 11, '2022-02-25 17:45:39', '2022-02-25 17:45:39', 'voyager.database.index', NULL);
+INSERT INTO `menu_items` VALUES (8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 12, '2022-02-25 17:45:39', '2022-02-25 17:45:39', 'voyager.compass.index', NULL);
+INSERT INTO `menu_items` VALUES (9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 13, '2022-02-25 17:45:39', '2022-02-25 17:45:39', 'voyager.bread.index', NULL);
+INSERT INTO `menu_items` VALUES (10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 14, '2022-02-25 17:45:39', '2022-02-25 17:45:39', 'voyager.settings.index', NULL);
+INSERT INTO `menu_items` VALUES (11, 1, 'Categories', '', '_self', 'voyager-categories', NULL, NULL, 8, '2022-02-25 17:45:46', '2022-02-25 17:45:46', 'voyager.categories.index', NULL);
+INSERT INTO `menu_items` VALUES (12, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 6, '2022-02-25 17:45:47', '2022-02-25 17:45:47', 'voyager.posts.index', NULL);
+INSERT INTO `menu_items` VALUES (13, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 7, '2022-02-25 17:45:48', '2022-02-25 17:45:48', 'voyager.pages.index', NULL);
 
 -- ----------------------------
 -- Table structure for menus
@@ -295,12 +295,12 @@ CREATE TABLE `menus`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `menus_name_unique`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of menus
 -- ----------------------------
-INSERT INTO `menus` VALUES (1, 'admin', '2022-02-25 12:45:38', '2022-02-25 12:45:38');
+INSERT INTO `menus` VALUES (1, 'admin', '2022-02-25 17:45:38', '2022-02-25 17:45:38');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -311,7 +311,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of migrations
@@ -363,12 +363,12 @@ CREATE TABLE `pages`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `pages_slug_unique`(`slug` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of pages
 -- ----------------------------
-INSERT INTO `pages` VALUES (1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
+INSERT INTO `pages` VALUES (1, 0, 'Hello World', 'Hang the jib grog grog blossom grapple dance the hempen jig gangway pressgang bilge rat to go on account lugger. Nelsons folly gabion line draught scallywag fire ship gaff fluke fathom case shot. Sea Legs bilge rat sloop matey gabion long clothes run a shot across the bow Gold Road cog league.', '<p>Hello World. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', 'pages/page1.jpg', 'hello-world', 'Yar Meta Description', 'Keyword1, Keyword2', 'ACTIVE', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -379,7 +379,7 @@ CREATE TABLE `password_resets`  (
   `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email` ASC) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of password_resets
@@ -397,7 +397,7 @@ CREATE TABLE `permission_role`  (
   INDEX `permission_role_role_id_index`(`role_id` ASC) USING BTREE,
   CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of permission_role
@@ -455,51 +455,51 @@ CREATE TABLE `permissions`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `permissions_key_index`(`key` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 41 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of permissions
 -- ----------------------------
-INSERT INTO `permissions` VALUES (1, 'browse_admin', NULL, '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (2, 'browse_bread', NULL, '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (3, 'browse_database', NULL, '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (4, 'browse_media', NULL, '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (5, 'browse_compass', NULL, '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (6, 'browse_menus', 'menus', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (7, 'read_menus', 'menus', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (8, 'edit_menus', 'menus', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (9, 'add_menus', 'menus', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (10, 'delete_menus', 'menus', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (11, 'browse_roles', 'roles', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (12, 'read_roles', 'roles', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (13, 'edit_roles', 'roles', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (14, 'add_roles', 'roles', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (15, 'delete_roles', 'roles', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (16, 'browse_users', 'users', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (17, 'read_users', 'users', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `permissions` VALUES (18, 'edit_users', 'users', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (19, 'add_users', 'users', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (20, 'delete_users', 'users', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (21, 'browse_settings', 'settings', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (22, 'read_settings', 'settings', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (23, 'edit_settings', 'settings', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (24, 'add_settings', 'settings', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (25, 'delete_settings', 'settings', '2022-02-25 12:45:40', '2022-02-25 12:45:40');
-INSERT INTO `permissions` VALUES (26, 'browse_categories', 'categories', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `permissions` VALUES (27, 'read_categories', 'categories', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `permissions` VALUES (28, 'edit_categories', 'categories', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `permissions` VALUES (29, 'add_categories', 'categories', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `permissions` VALUES (30, 'delete_categories', 'categories', '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `permissions` VALUES (31, 'browse_posts', 'posts', '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `permissions` VALUES (32, 'read_posts', 'posts', '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `permissions` VALUES (33, 'edit_posts', 'posts', '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `permissions` VALUES (34, 'add_posts', 'posts', '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `permissions` VALUES (35, 'delete_posts', 'posts', '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `permissions` VALUES (36, 'browse_pages', 'pages', '2022-02-25 12:45:48', '2022-02-25 12:45:48');
-INSERT INTO `permissions` VALUES (37, 'read_pages', 'pages', '2022-02-25 12:45:48', '2022-02-25 12:45:48');
-INSERT INTO `permissions` VALUES (38, 'edit_pages', 'pages', '2022-02-25 12:45:48', '2022-02-25 12:45:48');
-INSERT INTO `permissions` VALUES (39, 'add_pages', 'pages', '2022-02-25 12:45:48', '2022-02-25 12:45:48');
-INSERT INTO `permissions` VALUES (40, 'delete_pages', 'pages', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
+INSERT INTO `permissions` VALUES (1, 'browse_admin', NULL, '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (2, 'browse_bread', NULL, '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (3, 'browse_database', NULL, '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (4, 'browse_media', NULL, '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (5, 'browse_compass', NULL, '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (6, 'browse_menus', 'menus', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (7, 'read_menus', 'menus', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (8, 'edit_menus', 'menus', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (9, 'add_menus', 'menus', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (10, 'delete_menus', 'menus', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (11, 'browse_roles', 'roles', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (12, 'read_roles', 'roles', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (13, 'edit_roles', 'roles', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (14, 'add_roles', 'roles', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (15, 'delete_roles', 'roles', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (16, 'browse_users', 'users', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (17, 'read_users', 'users', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `permissions` VALUES (18, 'edit_users', 'users', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (19, 'add_users', 'users', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (20, 'delete_users', 'users', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (21, 'browse_settings', 'settings', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (22, 'read_settings', 'settings', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (23, 'edit_settings', 'settings', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (24, 'add_settings', 'settings', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (25, 'delete_settings', 'settings', '2022-02-25 17:45:40', '2022-02-25 17:45:40');
+INSERT INTO `permissions` VALUES (26, 'browse_categories', 'categories', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `permissions` VALUES (27, 'read_categories', 'categories', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `permissions` VALUES (28, 'edit_categories', 'categories', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `permissions` VALUES (29, 'add_categories', 'categories', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `permissions` VALUES (30, 'delete_categories', 'categories', '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `permissions` VALUES (31, 'browse_posts', 'posts', '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `permissions` VALUES (32, 'read_posts', 'posts', '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `permissions` VALUES (33, 'edit_posts', 'posts', '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `permissions` VALUES (34, 'add_posts', 'posts', '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `permissions` VALUES (35, 'delete_posts', 'posts', '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `permissions` VALUES (36, 'browse_pages', 'pages', '2022-02-25 17:45:48', '2022-02-25 17:45:48');
+INSERT INTO `permissions` VALUES (37, 'read_pages', 'pages', '2022-02-25 17:45:48', '2022-02-25 17:45:48');
+INSERT INTO `permissions` VALUES (38, 'edit_pages', 'pages', '2022-02-25 17:45:48', '2022-02-25 17:45:48');
+INSERT INTO `permissions` VALUES (39, 'add_pages', 'pages', '2022-02-25 17:45:48', '2022-02-25 17:45:48');
+INSERT INTO `permissions` VALUES (40, 'delete_pages', 'pages', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
 
 -- ----------------------------
 -- Table structure for posts
@@ -523,15 +523,15 @@ CREATE TABLE `posts`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `posts_slug_unique`(`slug` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of posts
 -- ----------------------------
-INSERT INTO `posts` VALUES (1, 0, NULL, 'Lorem Ipsum Post denis', NULL, 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/post1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 12:45:47', '2022-12-17 14:57:07');
-INSERT INTO `posts` VALUES (2, 0, NULL, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\n                <h2>We can use all kinds of format!</h2>\n                <p>And include a bunch of other stuff.</p>', 'posts/post2.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `posts` VALUES (3, 0, NULL, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/post3.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 12:45:47', '2022-02-25 12:45:47');
-INSERT INTO `posts` VALUES (4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/post4.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 12:45:47', '2022-02-25 12:45:47');
+INSERT INTO `posts` VALUES (1, 0, NULL, 'Lorem Ipsum Post denis', NULL, 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/post1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 17:45:47', '2022-12-17 19:57:07');
+INSERT INTO `posts` VALUES (2, 0, NULL, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\n                <h2>We can use all kinds of format!</h2>\n                <p>And include a bunch of other stuff.</p>', 'posts/post2.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `posts` VALUES (3, 0, NULL, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/post3.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 17:45:47', '2022-02-25 17:45:47');
+INSERT INTO `posts` VALUES (4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/post4.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2022-02-25 17:45:47', '2022-02-25 17:45:47');
 
 -- ----------------------------
 -- Table structure for roles
@@ -545,13 +545,13 @@ CREATE TABLE `roles`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `roles_name_unique`(`name` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of roles
 -- ----------------------------
-INSERT INTO `roles` VALUES (1, 'admin', 'Administrator', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
-INSERT INTO `roles` VALUES (2, 'user', 'Normal User', '2022-02-25 12:45:39', '2022-02-25 12:45:39');
+INSERT INTO `roles` VALUES (1, 'admin', 'Administrator', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
+INSERT INTO `roles` VALUES (2, 'user', 'Normal User', '2022-02-25 17:45:39', '2022-02-25 17:45:39');
 
 -- ----------------------------
 -- Table structure for settings
@@ -568,7 +568,7 @@ CREATE TABLE `settings`  (
   `group` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `settings_key_unique`(`key` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of settings
@@ -599,41 +599,41 @@ CREATE TABLE `translations`  (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `translations_table_name_column_name_foreign_key_locale_unique`(`table_name` ASC, `column_name` ASC, `foreign_key` ASC, `locale` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of translations
 -- ----------------------------
-INSERT INTO `translations` VALUES (1, 'data_types', 'display_name_singular', 5, 'pt', 'Post', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (2, 'data_types', 'display_name_singular', 6, 'pt', 'Página', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (3, 'data_types', 'display_name_singular', 1, 'pt', 'Utilizador', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (4, 'data_types', 'display_name_singular', 4, 'pt', 'Categoria', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (5, 'data_types', 'display_name_singular', 2, 'pt', 'Menu', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (6, 'data_types', 'display_name_singular', 3, 'pt', 'Função', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (7, 'data_types', 'display_name_plural', 5, 'pt', 'Posts', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (8, 'data_types', 'display_name_plural', 6, 'pt', 'Páginas', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (9, 'data_types', 'display_name_plural', 1, 'pt', 'Utilizadores', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (10, 'data_types', 'display_name_plural', 4, 'pt', 'Categorias', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (11, 'data_types', 'display_name_plural', 2, 'pt', 'Menus', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (12, 'data_types', 'display_name_plural', 3, 'pt', 'Funções', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (13, 'categories', 'slug', 1, 'pt', 'categoria-1', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (14, 'categories', 'name', 1, 'pt', 'Categoria 1', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (15, 'categories', 'slug', 2, 'pt', 'categoria-2', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (16, 'categories', 'name', 2, 'pt', 'Categoria 2', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (17, 'pages', 'title', 1, 'pt', 'Olá Mundo', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (18, 'pages', 'slug', 1, 'pt', 'ola-mundo', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (19, 'pages', 'body', 1, 'pt', '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\r\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (20, 'menu_items', 'title', 1, 'pt', 'Painel de Controle', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (21, 'menu_items', 'title', 2, 'pt', 'Media', '2022-02-25 12:45:49', '2022-02-25 12:45:49');
-INSERT INTO `translations` VALUES (22, 'menu_items', 'title', 12, 'pt', 'Publicações', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (23, 'menu_items', 'title', 3, 'pt', 'Utilizadores', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (24, 'menu_items', 'title', 11, 'pt', 'Categorias', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (25, 'menu_items', 'title', 13, 'pt', 'Páginas', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (26, 'menu_items', 'title', 4, 'pt', 'Funções', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (27, 'menu_items', 'title', 5, 'pt', 'Ferramentas', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (28, 'menu_items', 'title', 6, 'pt', 'Menus', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (29, 'menu_items', 'title', 7, 'pt', 'Base de dados', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
-INSERT INTO `translations` VALUES (30, 'menu_items', 'title', 10, 'pt', 'Configurações', '2022-02-25 12:45:50', '2022-02-25 12:45:50');
+INSERT INTO `translations` VALUES (1, 'data_types', 'display_name_singular', 5, 'pt', 'Post', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (2, 'data_types', 'display_name_singular', 6, 'pt', 'Página', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (3, 'data_types', 'display_name_singular', 1, 'pt', 'Utilizador', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (4, 'data_types', 'display_name_singular', 4, 'pt', 'Categoria', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (5, 'data_types', 'display_name_singular', 2, 'pt', 'Menu', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (6, 'data_types', 'display_name_singular', 3, 'pt', 'Função', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (7, 'data_types', 'display_name_plural', 5, 'pt', 'Posts', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (8, 'data_types', 'display_name_plural', 6, 'pt', 'Páginas', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (9, 'data_types', 'display_name_plural', 1, 'pt', 'Utilizadores', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (10, 'data_types', 'display_name_plural', 4, 'pt', 'Categorias', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (11, 'data_types', 'display_name_plural', 2, 'pt', 'Menus', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (12, 'data_types', 'display_name_plural', 3, 'pt', 'Funções', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (13, 'categories', 'slug', 1, 'pt', 'categoria-1', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (14, 'categories', 'name', 1, 'pt', 'Categoria 1', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (15, 'categories', 'slug', 2, 'pt', 'categoria-2', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (16, 'categories', 'name', 2, 'pt', 'Categoria 2', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (17, 'pages', 'title', 1, 'pt', 'Olá Mundo', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (18, 'pages', 'slug', 1, 'pt', 'ola-mundo', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (19, 'pages', 'body', 1, 'pt', '<p>Olá Mundo. Scallywag grog swab Cat o\'nine tails scuttle rigging hardtack cable nipper Yellow Jack. Handsomely spirits knave lad killick landlubber or just lubber deadlights chantey pinnace crack Jennys tea cup. Provost long clothes black spot Yellow Jack bilged on her anchor league lateen sail case shot lee tackle.</p>\r\n<p>Ballast spirits fluke topmast me quarterdeck schooner landlubber or just lubber gabion belaying pin. Pinnace stern galleon starboard warp carouser to go on account dance the hempen jig jolly boat measured fer yer chains. Man-of-war fire in the hole nipperkin handsomely doubloon barkadeer Brethren of the Coast gibbet driver squiffy.</p>', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (20, 'menu_items', 'title', 1, 'pt', 'Painel de Controle', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (21, 'menu_items', 'title', 2, 'pt', 'Media', '2022-02-25 17:45:49', '2022-02-25 17:45:49');
+INSERT INTO `translations` VALUES (22, 'menu_items', 'title', 12, 'pt', 'Publicações', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (23, 'menu_items', 'title', 3, 'pt', 'Utilizadores', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (24, 'menu_items', 'title', 11, 'pt', 'Categorias', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (25, 'menu_items', 'title', 13, 'pt', 'Páginas', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (26, 'menu_items', 'title', 4, 'pt', 'Funções', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (27, 'menu_items', 'title', 5, 'pt', 'Ferramentas', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (28, 'menu_items', 'title', 6, 'pt', 'Menus', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (29, 'menu_items', 'title', 7, 'pt', 'Base de dados', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
+INSERT INTO `translations` VALUES (30, 'menu_items', 'title', 10, 'pt', 'Configurações', '2022-02-25 17:45:50', '2022-02-25 17:45:50');
 
 -- ----------------------------
 -- Table structure for user_roles
@@ -647,7 +647,7 @@ CREATE TABLE `user_roles`  (
   INDEX `user_roles_role_id_index`(`role_id` ASC) USING BTREE,
   CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `user_roles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user_roles
@@ -673,13 +673,13 @@ CREATE TABLE `users`  (
   UNIQUE INDEX `users_email_unique`(`email` ASC) USING BTREE,
   INDEX `users_role_id_foreign`(`role_id` ASC) USING BTREE,
   CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$haOz54v7h4UAdqKRJTtQOe3ZvVyZCAdqPEtUmX/Au1DRNlavTO4um', 'Z2SKf2YeJ7jyESKUYBG3Q2OpvOfxQgBp9RNoAgFlM6VbSLAn4CrcHEyngLG2', NULL, '2022-02-25 12:45:46', '2022-02-25 12:45:46');
-INSERT INTO `users` VALUES (2, 2, 'mr denis', 'denisofficial005@gmail.com', 'users/default.png', NULL, '$2y$10$byH1KXdvnK6r5s2m4jqGy.iaT8tvZ1oGVeRxx0WBafGwBYl47WFCi', NULL, NULL, '2022-12-17 14:55:28', '2022-12-17 14:55:28');
+INSERT INTO `users` VALUES (1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$haOz54v7h4UAdqKRJTtQOe3ZvVyZCAdqPEtUmX/Au1DRNlavTO4um', 'Z2SKf2YeJ7jyESKUYBG3Q2OpvOfxQgBp9RNoAgFlM6VbSLAn4CrcHEyngLG2', NULL, '2022-02-25 17:45:46', '2022-02-25 17:45:46');
+INSERT INTO `users` VALUES (2, 2, 'mr denis', 'denisofficial005@gmail.com', 'users/default.png', NULL, '$2y$10$byH1KXdvnK6r5s2m4jqGy.iaT8tvZ1oGVeRxx0WBafGwBYl47WFCi', NULL, NULL, '2022-12-17 19:55:28', '2022-12-17 19:55:28');
 
 -- ----------------------------
 -- Triggers structure for table customers

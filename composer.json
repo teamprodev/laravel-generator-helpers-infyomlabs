@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "infyomlabs/adminlte-templates": "^5.0",
         "infyomlabs/laravel-generator": "^5.0",
+        "infyomlabs/laravel-generator-helpers": "^4.0",
         "infyomlabs/laravel-ui-adminlte": "^5.1",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
